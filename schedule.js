@@ -51,6 +51,16 @@ const renderCalendar = () => {
 
   // Dates 그리기
   document.querySelector('.dates').innerHTML = dates.join('');
+//오늘 날짜 표시
+  const today = new Date();
+  if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
+    for (let date of document.querySelectorAll('.this')) {
+      if (+date.innerText === today.getDate()) {
+        date.classList.add('today');
+        break;
+      }
+    }
+  }
 }
 
 renderCalendar();
@@ -62,6 +72,11 @@ const prevMonth = () => {
   
   const nextMonth = () => {
     date.setMonth(date.getMonth() + 1);
+    renderCalendar();
+  }
+
+  const goToday = () => {
+    date = new Date();
     renderCalendar();
   }
 
@@ -124,6 +139,9 @@ const prevMonth = () => {
     //초기값을 오늘 날짜로 
     $('#datepicker1,#datepicker2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)            
   });
+
+  //일정 저장하기
+
 
 
 
