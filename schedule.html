@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="schedule.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>schedule</title>
+</head>
+<body>
+    <div class="calendar">
+        <div class="header">
+            <div class="year-month"></div>
+            <button class="btn-modal" id="btn-modal" type="button" onclick=""><h3>+</h3></button>
+            <div class="nav">
+                
+                <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+                
+                <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="days">
+                <div class="day">일</div>
+                <div class="day">월</div>
+                <div class="day">화</div>
+                <div class="day">수</div>
+                <div class="day">목</div>
+                <div class="day">금</div>
+                <div class="day">토</div>
+            </div>
+            <div class="dates"></div>
+        </div>
+    </div>
+    <div id="modal1" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>일정 입력</h2>
+            </div>
+            <div class="close-area">
+                X
+            </div>
+            <div class="content">
+                <div class="start">
+                    <h3>제목</h3>
+                    <input class="name" id="name" type="text" name="name">
+                </div>
+                <div class="start">
+                    <h3>시작</h3>
+                    <input type="text" id="datepicker1" class="datepicker">
+                </div>
+                <div class="end">
+                    <h3>종료</h3>
+                    <input type="text" id="datepicker2" class="datepicker">
+                </div>
+                <div class="memo">
+                    <h3>메모</h3>
+                    <textarea class="memo" id="memo" name="memo" row="5" cols="20"></textarea>
+                </div>
+                <div class="check-button">
+                    <button class="btn-check" id="btn-check" type="button" onclick=""><h3>등록</h3></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+  
+    <script src="schedule.js"></script>
+</body>
+</html>
